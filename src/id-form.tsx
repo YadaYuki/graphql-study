@@ -2,17 +2,19 @@ import React from 'react'
 import { Paper, InputBase, IconButton } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
-interface Props {  handleChange: (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void }
+interface Props {
+    handleChange: (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => void,
+    handleClick: () => void
+}
 
-const IdForm: React.FC<Props> = ({  handleChange }) => {
+const IdForm: React.FC<Props> = ({ handleChange, handleClick }) => {
 
     return (
         <Paper component="form">
             <InputBase
-                placeholder="Search Google Maps"
                 onChange={handleChange}
             />
-            <IconButton  type="submit" aria-label="search">
+            <IconButton  aria-label="search" onClick={handleClick}>
                 <SearchIcon />
             </IconButton>
         </Paper>
